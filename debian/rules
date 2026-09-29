@@ -1,4 +1,5 @@
 #!/usr/bin/make -f
+export GO111MODULE := off
 #
 # This debian/rules uses debhelper.
 #
@@ -11,7 +12,7 @@ export DH_GOPKG := github.com/danos/vyatta-service-dns
 GOBUILDDIR := _build
 
 %:
-	 dh $@ --buildsystem=golang --with=golang,vci,yang --builddirectory=$(GOBUILDDIR)
+	 dh $@ --buildsystem=golang --with golang,vci,yang --builddirectory=$(GOBUILDDIR)
 
 override_dh_auto_build: vet
 	dh_auto_build
@@ -23,8 +24,6 @@ vet:
 		xargs dirname | sort -u | grep -v "/vendor/" | grep $(GOBUILDDIR)); \
 	fi
 
-override_dh_systemd_enable:
-	dh_systemd_enable --name=dnsmasq,ddclient --no-enable
+override_dh_installsystemd:
+	dh_installsystemd --name=dnsmasq,ddclient --no-enable --no-start
 
-override_dh_systemd_start:
-	dh_systemd_start --no-start debian/dnsmasq@.service debian/ddclient@.service

@@ -1,3 +1,9 @@
+vyatta-service-dns (1.15) trixie; urgency=medium
+
+  * Port to Debian 13 (trixie): debhelper-compat 13, Standards-Version 4.7.2, Rules-Requires-Root, NuDanOS Vcs.
+
+ -- NuDanOS Maintainers <jon@fernandez.tech>  Tue, 29 Sep 2026 07:32:53 -0700
+
 vyatta-service-dns (1.14) unstable; urgency=medium
 
   * Update compat level and go tool vet command
