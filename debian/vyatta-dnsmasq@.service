@@ -1,5 +1,5 @@
 [Unit]
-Description=dnsmasq - A lightweight caching DNS server
+Description=dnsmasq (%i) - DNS forwarding in a routing instance
 
 [Service]
 Type=forking

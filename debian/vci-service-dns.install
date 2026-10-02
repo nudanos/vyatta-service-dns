@@ -1,5 +1,5 @@
 debian/ddclient@.service usr/lib/systemd/system
-debian/dnsmasq@.service usr/lib/systemd/system
+debian/vyatta-dnsmasq@.service usr/lib/systemd/system
 scripts/dns-dynamic-op usr/lib/vci-service-dns
 scripts/dns-forwarding-op usr/lib/vci-service-dns
 scripts/list-dhcp-interfaces usr/lib/vci-service-dns

@@ -567,3 +567,12 @@ new_domain_name_servers=2.2.2.2
 		t.Fatal(err)
 	}
 }
+
+// Debian 13's dnsmasq package ships its own dnsmasq@.service, so the
+// routing-instance unit has a name of its own.
+func TestInstanceUnitDoesNotClashWithDebianDnsmasq(t *testing.T) {
+	c := NewInstanceConfig("blue")
+	if c.unit != "vyatta-dnsmasq@blue.service" {
+		t.Errorf("unit = %q, want vyatta-dnsmasq@blue.service", c.unit)
+	}
+}

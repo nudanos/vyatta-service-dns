@@ -25,5 +25,5 @@ vet:
 	fi
 
 override_dh_installsystemd:
-	dh_installsystemd --name=dnsmasq,ddclient --no-enable --no-start
+	dh_installsystemd --name=vyatta-dnsmasq,ddclient --no-enable --no-start
 

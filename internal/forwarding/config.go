@@ -202,7 +202,7 @@ func NewInstanceConfig(name string, opts ...ConfigOption) *Config {
 	instanceDir := fmt.Sprintf(instanceDirFmt, name)
 	iopts := []ConfigOption{
 		InstanceName(name),
-		Unit(fmt.Sprintf("dnsmasq@%s.service", name)),
+		Unit(fmt.Sprintf("vyatta-dnsmasq@%s.service", name)),
 		ENVFile(fmt.Sprintf("%s/dnsmasq.env", instanceDir)),
 
 		ConfigFile(fmt.Sprintf("%s/dnsmasq.conf", instanceDir)),
