@@ -1,3 +1,9 @@
+vyatta-service-dns (1.17) trixie; urgency=medium
+
+  * go vet every Go package, vendored code included.
+
+ -- NuDanOS Maintainers <jon@fernandez.tech>  Sun, 11 Oct 2026 11:17:34 -0700
+
 vyatta-service-dns (1.16) trixie; urgency=medium
 
   * Rename the routing-instance unit dnsmasq@.service to
